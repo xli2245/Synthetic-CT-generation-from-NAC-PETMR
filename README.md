@@ -50,6 +50,7 @@ python ./generator/main.py
 python ./generator/predict.py
 ```
 ## Results
+![sCT from test dataset](https://github.com/xli2245/Synthetic-CT-generation-from-NAC-PETMR/blob/master/sCT.png)
 
 
 
