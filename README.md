@@ -6,11 +6,12 @@ Simultaneous PET/MR scanners combine the high sensitivity of MR imaging with the
 - [Perceptual Loss Framework](#perceptual-loss-framework)
   - [Discriminator](#discriminator)
   - [Generator](#generator)
-  - [Prediction](#prediction)
+- [Results](#results)
+
 ## Setup
 Clone this repo:
 ```
-git clone [https://github.com/xli2245/CS839-sentiment-classification](https://github.com/xli2245/Synthetic-CT-generation-from-NAC-PETMR)
+git clone https://github.com/xli2245/Synthetic-CT-generation-from-NAC-PETMR
 ```
 ## Environment
 This project is implemented using Keras.
@@ -29,26 +30,28 @@ conda install -c anaconda scikit-learn
 conda install -c anaconda scikit-image
 ```
 ## Perceptual Loss Framework
-![Main framework](https://github.com/xli2245/Synthetic-CT-generation-from-NAC-PETMR/blob/main/main%20framework.png)
+![Main framework](https://github.com/xli2245/Synthetic-CT-generation-from-NAC-PETMR/blob/master/framework.png)
 ### Discriminator
-The model training, validation and testing are performed using the [Monai Docker](https://hub.docker.com/r/projectmonai/monai).
+VGG 16 is used for perceptual loss calculation. In the first round, the VGG model was trained to discriminate the NAC PET and CT images
+```
+python ./discriminator/discriminator_PET.py
+```
+In the second round, it was trained to discriminate the sCT and CT images for better image feature caption.
+```
+python ./discriminator/discriminator_sCT.py
+```
 ### Generator
 1.  Model training
 ```
-python train.py
+python ./generator/main.py
 ```
-2. Model validation / testing
+2. Model prediction
 ```
-python predict.py
+python ./generator/predict.py
 ```
-### Prediction
-For the fin-bert and roberta-base pretrained model, the download links are provided under each folder. The downloaded pretrained models for the others like (BERT, DeBERTa ...) can be also be found in the google drive folder. The name is "model.tar.gz".
+## Results
 
-To unzip the model weight
-```
-tar -xvf ./model.tar.gz
-mv ./model/* ./
-rm -rf ./model
-```
+
+
 
 
