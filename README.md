@@ -1,5 +1,6 @@
 # Synthetic-CT-generation-from-NAC-PETMR 
-Simultaneous PET/MR scanners combine the high sensitivity of MR imaging with the functional imaging of PET. However, attenuation correction of breast PET/MR imaging is technically challenging. The purpose of this study is to establish a robust attenuation correction algorithm for breast PET/MR images that relies on deep learning (DL) to recreate the missing portions of the patient’s anatomy (truncation completion), as well as to provide bone information for attenuation correction from only the PET data. Three DL models, U-Net with mean absolute error loss (DL_MAE) model, U-Net with mean squared error loss (DL_MSE) model, and U-Net with perceptual loss (DL_Perceptual) model, were trained to predict synthetic CT images (sCT) for PET attenuation correction (AC) given non-attenuation corrected (NAC) PET (PET/MR) images as inputs. The DL and Dixon-based sCT reconstructed PET images were compared against those reconstructed from CT images by calculating the percent error of the standardized uptake value (SUV) and conducting Wilcoxon signed rank statistical tests. 
+Simultaneous PET/MR scanners combine the high sensitivity of MR imaging with the functional imaging of PET. However, attenuation correction of breast PET/MR imaging is technically challenging. The purpose of this study is to establish a robust attenuation correction algorithm for breast PET/MR images that relies on deep learning (DL) to recreate the missing portions of the patient’s anatomy (truncation completion), as well as to provide bone information for attenuation correction from only the PET data. Three DL models, U-Net with mean absolute error loss (DL_MAE) model, U-Net with mean squared error loss (DL_MSE) model, and U-Net with perceptual loss (DL_Perceptual) model, were trained to predict synthetic CT images (sCT) for PET attenuation correction (AC) given non-attenuation corrected (NAC) PET (PET/MR) images as inputs. The DL and Dixon-based sCT reconstructed PET images were compared against those reconstructed from CT images by calculating the percent error of the standardized uptake value (SUV) and conducting Wilcoxon signed rank statistical tests.
+![sCT from test dataset](https://github.com/xli2245/Synthetic-CT-generation-from-NAC-PETMR/blob/master/sCT.png)
 ## Table of Contents
 - [Setup](#setup)
 - [Environment](#environment)
@@ -49,8 +50,6 @@ python ./generator/main.py
 ```
 python ./generator/predict.py
 ```
-## Results
-![sCT from test dataset](https://github.com/xli2245/Synthetic-CT-generation-from-NAC-PETMR/blob/master/sCT.png)
 
 
 
